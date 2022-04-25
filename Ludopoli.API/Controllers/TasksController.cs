@@ -31,10 +31,13 @@ namespace Ludopoli.API.Controllers
         public IActionResult GetTask([FromRoute] int taskId)
         {
             var task = taskRepository.GetTask(taskId);
+
             if (task == null)
             {
                 return NotFound();
             }
+
+
             return Ok(task);
         }
 

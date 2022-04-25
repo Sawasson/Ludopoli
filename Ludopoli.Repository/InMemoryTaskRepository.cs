@@ -35,7 +35,15 @@ namespace Ludopoli.Repository
         public List<TaskEntity> GetTaskList()
         {
 
-            return context.TaskEntities.Include(x => x.Priority).Include(x => x.Status).ToList();
+            return context.TaskEntities
+                .Include(x => x.Priority)
+                .Include(x => x.Status).ToList();
+        }
+
+        public List<TaskEntity> GetAllTaskList()
+        {
+
+            return context.TaskEntities.ToList();
         }
 
         public TaskEntity GetTask(int taskId)
@@ -46,6 +54,8 @@ namespace Ludopoli.Repository
         public TaskEntity UpdateTask(int taskId, TaskEntity request)
         {
             var existingTask = GetTask(taskId);
+
+
             if (existingTask != null)
             {
                 existingTask.Name = request.Name;

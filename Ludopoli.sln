@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ludopoli.Repository", "Ludo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ludopoli.Validation", "Ludopoli.Validation\Ludopoli.Validation.csproj", "{C587D970-685F-4BE9-9CDA-C586426BDDAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ludopoli.UnitTest", "Ludopoli.UnitTest\Ludopoli.UnitTest.csproj", "{663AD277-566B-4414-BC5C-29AEF3A5EE2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C587D970-685F-4BE9-9CDA-C586426BDDAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C587D970-685F-4BE9-9CDA-C586426BDDAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C587D970-685F-4BE9-9CDA-C586426BDDAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{663AD277-566B-4414-BC5C-29AEF3A5EE2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{663AD277-566B-4414-BC5C-29AEF3A5EE2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{663AD277-566B-4414-BC5C-29AEF3A5EE2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{663AD277-566B-4414-BC5C-29AEF3A5EE2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
