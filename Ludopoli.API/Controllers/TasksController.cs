@@ -1,11 +1,7 @@
-﻿using Ludopoli.API.DataModels;
-using Ludopoli.API.Repositories;
+﻿using Ludopoli.Core;
+using Ludopoli.Model;
+
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
 
 namespace Ludopoli.API.Controllers
@@ -18,6 +14,7 @@ namespace Ludopoli.API.Controllers
         public TasksController(ITaskRepository taskRepository)
         {
             this.taskRepository = taskRepository;
+            this.taskRepository.Init();
         }
 
         [HttpGet]
@@ -53,6 +50,7 @@ namespace Ludopoli.API.Controllers
                 task.StatusId = request.StatusId;
 
                 var updatedTask = taskRepository.UpdateTask(taskId, task);
+
                 if (updatedTask != null)
                 {
                     return Ok(updatedTask);
@@ -68,6 +66,7 @@ namespace Ludopoli.API.Controllers
             if (taskRepository.GetTask(taskId) != null)
             {
                 var task = taskRepository.DeleteTask(taskId);
+
                 if (task != null)
                 {
                     return Ok(task);

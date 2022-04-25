@@ -1,10 +1,6 @@
-﻿using Ludopoli.API.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace Ludopoli.API.DataModels
+namespace Ludopoli.Core
 {
     public class TaskEntity
     {

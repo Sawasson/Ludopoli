@@ -1,12 +1,11 @@
 ﻿using FluentValidation;
-using Ludopoli.API.DataModels;
-using Ludopoli.API.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Ludopoli.API.Validators
+using Ludopoli.Core;
+using Ludopoli.Model;
+
+using System.Linq;
+
+namespace Ludopoli.Validation
 {
     public class AddTaskRequestValidator:AbstractValidator<AddTaskRequest>
     {

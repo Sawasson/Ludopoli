@@ -1,20 +1,15 @@
 using FluentValidation.AspNetCore;
-using Ludopoli.API.DataModels;
-using Ludopoli.API.Repositories;
+
+using Ludopoli.Core;
+using Ludopoli.Repository;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Ludopoli.API
 {
@@ -38,7 +33,7 @@ namespace Ludopoli.API
             services.AddScoped<ITaskRepository, InMemoryTaskRepository>();
             services.AddControllers();
             services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
-            services.AddDbContext<TaskContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TaskProjectDb")));
+            services.AddDbContext<TaskContext>(options => options.UseInMemoryDatabase("TaskProjectDb"));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Ludopoli.API", Version = "v1" });

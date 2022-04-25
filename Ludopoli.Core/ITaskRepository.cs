@@ -1,11 +1,10 @@
-﻿using Ludopoli.API.DataModels;
-using Ludopoli.API.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace Ludopoli.API.Repositories
+namespace Ludopoli.Core
 {
     public interface ITaskRepository
     {
@@ -18,7 +17,7 @@ namespace Ludopoli.API.Repositories
         List<Priority> GetPriorityList();
 
         List<Status> GetStatusList();
-
+        void Init();
         TaskEntity DeleteTask(int taskId);
 
         TaskEntity AddTask(TaskEntity request);
